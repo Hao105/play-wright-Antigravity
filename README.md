@@ -179,8 +179,15 @@ npx playwright test --headed
 npm install tdpw --save-dev
 ```
 
-### 2. 配置 TestDino MCP
+### 2. 配置 TestDino MCP 與 Token 申請
 透過新增 TestDino MCP 伺服器，Antigravity 代理將能直接讀取專案過去的錯誤模式。
+
+配置前，您需要先取得 **Personal Access Token (PAT)**：
+1. 登入 [TestDino](https://app.testdino.com/)。
+2. 點擊畫面右上角的 **Profile Avatar (個人頭像)**。
+3. 選擇 **Personal Access Tokens**，點擊產生金鑰 (Generate Token)。
+> **注意**：這與專案層級的 API Key 屬不同用途，主要用於授權自動化腳本以「使用者身份」管理測試案例。
+
 請打開 Antigravity 的 MCP 設定 (`Ctrl + ,` 搜尋 "MCP")，在原本的配置中加入以下內容：
 ```json
 {
@@ -195,7 +202,14 @@ npm install tdpw --save-dev
   }
 }
 ```
-*(請將 `your-pat-here` 替換為從 TestDino 後台取得的 Personal Access Token)*
+*(請將 `your-pat-here` 替換為剛申請好的 Personal Access Token)*
+
+另外，若要使 `tdpw test` 等 CLI 指令順利上傳報告，您需要在專案根目錄下配置一份 `testdino.config.js`，並填入您的 **Project API Key**：
+```javascript
+export default {
+  token: '<YOUR_PROJECT_API_KEY>',
+};
+```
 
 ### 3. TestDino 常用操作指令
 配置完成後，您可以使用以下指令來上傳或即時串流測試結果至測試儀表板：
