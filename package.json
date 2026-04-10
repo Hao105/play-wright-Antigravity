@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:dino": "npx playwright test && npm run tdpw:upload",
+    "tdpw:upload": "npx tdpw upload ./playwright-report --upload-html --json-report report.json --token trx_production_d0f55597475224bfa28e8ec89656953316604a2fb6affcfbf362336b6fc748fa"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

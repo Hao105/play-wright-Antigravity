@@ -1,0 +1,830 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/Administrator/OneDrive/Desktop/play-wright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "report.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputDir": "./playwright-report"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "cart-flow.spec.ts",
+      "file": "cart-flow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cart Flow",
+          "file": "cart-flow.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should add a product to cart and verify it in the cart page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30091,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts",
+                            "column": 23,
+                            "line": 44
+                          },
+                          "message": "Error: locator.waitFor: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'View Cart' }) to be visible\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\products-page.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m   \u001b[36masync\u001b[39m clickViewCart() {\n \u001b[90m 43 |\u001b[39m     \u001b[36mconst\u001b[39m viewCartBtn \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'View Cart'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m }\u001b[0m\n\u001b[2m    at ProductsPage.clickViewCart (C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts:44:23)\u001b[22m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\cart-flow.spec.ts:24:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:31.443Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\cart-flow-Cart-Flow-should-a2e87--verify-it-in-the-cart-page-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1f2315bc14f58c0784bd-e6946ebf61f648fa2561",
+              "file": "cart-flow.spec.ts",
+              "line": 12,
+              "column": 7
+            },
+            {
+              "title": "should add a product to cart and verify it in the cart page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30322,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts",
+                            "column": 23,
+                            "line": 44
+                          },
+                          "message": "Error: locator.waitFor: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'View Cart' }) to be visible\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\products-page.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m   \u001b[36masync\u001b[39m clickViewCart() {\n \u001b[90m 43 |\u001b[39m     \u001b[36mconst\u001b[39m viewCartBtn \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'View Cart'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m }\u001b[0m\n\u001b[2m    at ProductsPage.clickViewCart (C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts:44:23)\u001b[22m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\cart-flow.spec.ts:24:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:36.303Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\cart-flow-Cart-Flow-should-a2e87--verify-it-in-the-cart-page-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1f2315bc14f58c0784bd-638abce162ba00d63d8e",
+              "file": "cart-flow.spec.ts",
+              "line": 12,
+              "column": 7
+            },
+            {
+              "title": "should add a product to cart and verify it in the cart page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30191,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts",
+                            "column": 23,
+                            "line": 44
+                          },
+                          "message": "Error: locator.waitFor: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'View Cart' }) to be visible\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\products-page.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m   \u001b[36masync\u001b[39m clickViewCart() {\n \u001b[90m 43 |\u001b[39m     \u001b[36mconst\u001b[39m viewCartBtn \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'View Cart'\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m viewCartBtn\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   }\n \u001b[90m 47 |\u001b[39m }\u001b[0m\n\u001b[2m    at ProductsPage.clickViewCart (C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\pages\\products-page.ts:44:23)\u001b[22m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\cart-flow.spec.ts:24:24\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:52.488Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\cart-flow-Cart-Flow-should-a2e87--verify-it-in-the-cart-page-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "1f2315bc14f58c0784bd-ee8fe7408224d469c528",
+              "file": "cart-flow.spec.ts",
+              "line": 12,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "example.spec.ts",
+      "file": "example.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:31.358Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-b06063a3e613764d08f8",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "get started link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2616,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:31.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-274e97907a6e3638a22f",
+          "file": "example.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 7866,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:36.832Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-f53a5ad453cd33dc57d5",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "get started link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 9075,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:37.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-bfe080d6fe34297f494c",
+          "file": "example.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1980,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:54.297Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-4a26ebd06a6b810edcc2",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "get started link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-10T10:06:56.468Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-1eb159041d56409ed83c",
+          "file": "example.spec.ts",
+          "line": 10,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "login-page.spec.ts",
+      "file": "login-page.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Flow",
+          "file": "login-page.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should login successfully with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 604,
+                      "error": {
+                        "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.",
+                        "stack": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                          "column": 13,
+                          "line": 17
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                            "column": 13,
+                            "line": 17
+                          },
+                          "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n\n\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:31.456Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\login-page-Login-Flow-shou-270f7-ully-with-valid-credentials-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                        "column": 13,
+                        "line": 17
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d618082827405a5a7ba-16696e89ac54dbd4bb79",
+              "file": "login-page.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "should login successfully with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1203,
+                      "error": {
+                        "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.",
+                        "stack": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                          "column": 13,
+                          "line": 17
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                            "column": 13,
+                            "line": 17
+                          },
+                          "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n\n\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:46.970Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\login-page-Login-Flow-shou-270f7-ully-with-valid-credentials-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                        "column": 13,
+                        "line": 17
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d618082827405a5a7ba-5adf97c03eff2e4b56d4",
+              "file": "login-page.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "should login successfully with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 420,
+                      "error": {
+                        "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.",
+                        "stack": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                          "column": 13,
+                          "line": 17
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                            "column": 13,
+                            "line": 17
+                          },
+                          "message": "Error: Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.\n\n\u001b[0m \u001b[90m 15 |\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39memail \u001b[33m||\u001b[39m \u001b[33m!\u001b[39mpassword) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Missing STOREDEMO_EMAIL or STOREDEMO_PASSWORD environment variables. Please set them in your terminal before running tests.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     }\n \u001b[90m 19 |\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mgoto()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts:17:13\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:58.622Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\test-results\\login-page-Login-Flow-shou-270f7-ully-with-valid-credentials-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\OneDrive\\Desktop\\play-wright\\tests\\login-page.spec.ts",
+                        "column": 13,
+                        "line": 17
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "7d618082827405a5a7ba-d407cc23d8abd2b00322",
+              "file": "login-page.spec.ts",
+              "line": 9,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Test group",
+          "file": "seed.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "seed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 219,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:35.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "11ceb7af692008938f3b-e93327a24cf4dbee4058",
+              "file": "seed.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "seed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 669,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:06:50.327Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "11ceb7af692008938f3b-a737773906a63d161bed",
+              "file": "seed.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "seed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 613,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-10T10:07:00.432Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "11ceb7af692008938f3b-1dd7d8c7f73b28c0acc8",
+              "file": "seed.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-10T10:06:29.561Z",
+    "duration": 53524.396,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}
