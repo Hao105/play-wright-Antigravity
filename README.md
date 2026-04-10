@@ -169,6 +169,47 @@ npx playwright test --headed
 
 ---
 
+## TestDino 整合與 MCP 配置
+
+為了解決自動化測試中最令人頭痛的 Flaky Tests（不穩定測試）問題，本專案也整合了 TestDino，讓 AI 能夠根據歷史大數據分析錯誤並自動修復。
+
+### 1. 安裝 TestDino 測試套件
+首先，將 TestDino 的官方套件安裝為開發依賴：
+```powershell
+npm install tdpw --save-dev
+```
+
+### 2. 配置 TestDino MCP
+透過新增 TestDino MCP 伺服器，Antigravity 代理將能直接讀取專案過去的錯誤模式。
+請打開 Antigravity 的 MCP 設定 (`Ctrl + ,` 搜尋 "MCP")，在原本的配置中加入以下內容：
+```json
+{
+  "mcpServers": {
+    "testdino": {
+      "command": "npx",
+      "args": ["-y", "testdino-mcp"],
+      "env": {
+        "TESTDINO_PAT": "your-pat-here"
+      }
+    }
+  }
+}
+```
+*(請將 `your-pat-here` 替換為從 TestDino 後台取得的 Personal Access Token)*
+
+### 3. TestDino 常用操作指令
+配置完成後，您可以使用以下指令來上傳或即時串流測試結果至測試儀表板：
+```powershell
+# 執行 Playwright 測試，並將結果即時串流 (Streaming) 至 TestDino
+npx tdpw test
+
+# 執行傳統測試後，手動上傳產生的 HTML 測試報告
+npx playwright test
+npx tdpw upload ./playwright-report --upload-html
+```
+
+---
+
 ## 驗證連線 (Original MCP Section Content)
 
 設定並重啟完成後，您可以透過與 AI 代理對話來測試是否連線成功。
