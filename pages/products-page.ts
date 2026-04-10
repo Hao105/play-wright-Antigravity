@@ -6,7 +6,7 @@ export class ProductsPage {
 
   constructor(private readonly page: Page) {
     // 透過 Header 中帶有數字標籤（購物車數量）的容器來定位
-    this.cartIcon = page.locator('div').filter({ has: page.locator('span').filter({ text: /^\d+$/ }) }).first();
+    this.cartIcon = page.locator('div').filter({ has: page.locator('span').filter({ hasText: /^\d+$/ }) }).first();
   }
 
   async goto() {
